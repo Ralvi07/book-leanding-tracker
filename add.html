@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add loan - Book Lending Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lt-body">
+  <header class="lt-header">
+    <div class="lt-container">
+      <h1 class="lt-title">Book Lending Tracker</h1>
+      <p class="lt-subtitle">Keep track of who has your books and when they are due back.</p>
+    </div>
+  </header>
+  <nav class="lt-nav">
+    <div class="lt-container lt-nav-inner">
+      <a class="lt-nav-link" href="index.html">Home</a>
+      <a class="lt-nav-link lt-nav-active" href="add.html">Add loan</a>
+      <a class="lt-nav-link" href="loans.html">All loans</a>
+    </div>
+  </nav>
+
+  <main class="lt-container">
+    <section class="lt-card">
+      <h2 class="lt-card-title">Lend a book</h2>
+      <form id="loanForm" class="lt-form" novalidate>
+        <div class="lt-grid lt-grid-3">
+          <div class="lt-field">
+            <label class="lt-label" for="title">Title</label>
+            <input class="lt-input" type="text" id="title" name="title" required>
+            <span class="lt-error" id="titleError"></span>
+          </div>
+          <div class="lt-field">
+            <label class="lt-label" for="author">Author</label>
+            <input class="lt-input" type="text" id="author" name="author" required>
+            <span class="lt-error" id="authorError"></span>
+          </div>
+          <div class="lt-field">
+            <label class="lt-label" for="borrower">Borrower</label>
+            <input class="lt-input" type="text" id="borrower" name="borrower" required>
+            <span class="lt-error" id="borrowerError"></span>
+          </div>
+          <div class="lt-field">
+            <label class="lt-label" for="dueDate">Due date</label>
+            <input class="lt-input" type="date" id="dueDate" name="dueDate" required>
+            <span class="lt-error" id="dueDateError"></span>
+          </div>
+          <div class="lt-field">
+            <label class="lt-label" for="genre">Genre</label>
+            <input class="lt-input" type="text" id="genre" name="genre" required>
+            <span class="lt-error" id="genreError"></span>
+          </div>
+        </div>
+        <button class="lt-btn lt-btn-primary" type="submit">Add loan</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="lib/lendlib.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
