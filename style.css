@@ -1,0 +1,176 @@
+/* ==========================================================================
+   LendKit CSS Library (prefix: lt-)
+   A small, reusable component library. The page uses ONLY these classes.
+   ========================================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --lt-bg: #f4f6fb;
+  --lt-surface: #ffffff;
+  --lt-text: #1f2937;
+  --lt-muted: #6b7280;
+  --lt-border: #e5e7eb;
+  --lt-primary: #3b5bdb;
+  --lt-primary-dark: #2f49b3;
+  --lt-success: #2f9e44;
+  --lt-success-bg: #e6f6ea;
+  --lt-warning: #b7791f;
+  --lt-warning-bg: #fdf3dc;
+  --lt-danger: #e03131;
+  --lt-danger-bg: #fde8e8;
+  --lt-radius: 10px;
+  --lt-space: 1rem;
+  --lt-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --lt-bg: #111827;
+    --lt-surface: #1f2937;
+    --lt-text: #f3f4f6;
+    --lt-muted: #9ca3af;
+    --lt-border: #374151;
+    --lt-success-bg: #12351d;
+    --lt-warning-bg: #3a2c0c;
+    --lt-danger-bg: #3d1616;
+  }
+}
+
+/* ---------- Base ---------- */
+*, *::before, *::after { box-sizing: border-box; }
+
+.lt-body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--lt-bg);
+  color: var(--lt-text);
+  line-height: 1.5;
+}
+
+/* ---------- Layout ---------- */
+.lt-container {
+  width: 100%;
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 var(--lt-space);
+}
+
+.lt-header {
+  background: var(--lt-primary);
+  color: #fff;
+  padding: 1.75rem 0;
+  margin-bottom: 1.5rem;
+}
+
+.lt-title { margin: 0; font-size: 1.75rem; }
+.lt-subtitle { margin: 0.25rem 0 0; opacity: 0.9; }
+
+.lt-grid { display: grid; gap: var(--lt-space); margin-bottom: var(--lt-space); }
+.lt-grid-2 { grid-template-columns: repeat(2, 1fr); }
+.lt-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+@media (max-width: 760px) {
+  .lt-grid-2, .lt-grid-3 { grid-template-columns: 1fr; }
+}
+
+/* ---------- Card ---------- */
+.lt-card {
+  background: var(--lt-surface);
+  border: 1px solid var(--lt-border);
+  border-radius: var(--lt-radius);
+  box-shadow: var(--lt-shadow);
+  padding: 1.25rem;
+  margin-bottom: var(--lt-space);
+}
+
+.lt-card-title { margin: 0 0 var(--lt-space); font-size: 1.15rem; }
+
+/* ---------- Stat ---------- */
+.lt-stat { display: flex; flex-direction: column; margin-bottom: 0; }
+.lt-stat-label { color: var(--lt-muted); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.lt-stat-value { font-size: 2.25rem; font-weight: 700; color: var(--lt-primary); }
+.lt-stat-danger .lt-stat-value { color: var(--lt-danger); }
+
+/* ---------- Form ---------- */
+.lt-form { display: block; }
+.lt-field { display: flex; flex-direction: column; gap: 0.25rem; }
+.lt-label { font-weight: 600; font-size: 0.9rem; }
+
+.lt-input {
+  font: inherit;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--lt-border);
+  border-radius: 8px;
+  background: var(--lt-bg);
+  color: var(--lt-text);
+  width: 100%;
+}
+
+.lt-input:focus {
+  outline: 2px solid var(--lt-primary);
+  outline-offset: 1px;
+  border-color: var(--lt-primary);
+}
+
+.lt-input-invalid { border-color: var(--lt-danger); }
+.lt-error { color: var(--lt-danger); font-size: 0.8rem; min-height: 1.1em; }
+
+/* ---------- Buttons ---------- */
+.lt-btn {
+  font: inherit;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 8px;
+  padding: 0.55rem 1rem;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.05s;
+}
+
+.lt-btn:active { transform: translateY(1px); }
+.lt-btn-primary { background: var(--lt-primary); color: #fff; }
+.lt-btn-primary:hover { background: var(--lt-primary-dark); }
+.lt-btn-success { background: var(--lt-success); color: #fff; }
+.lt-btn-danger { background: transparent; color: var(--lt-danger); border-color: var(--lt-danger); }
+.lt-btn-danger:hover { background: var(--lt-danger-bg); }
+.lt-btn-small { padding: 0.3rem 0.65rem; font-size: 0.85rem; }
+
+/* ---------- Table ---------- */
+.lt-table-wrap { overflow-x: auto; }
+
+.lt-table { width: 100%; border-collapse: collapse; min-width: 720px; }
+
+.lt-table th,
+.lt-table td {
+  text-align: left;
+  padding: 0.7rem 0.75rem;
+  border-bottom: 1px solid var(--lt-border);
+  vertical-align: middle;
+}
+
+.lt-table th {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--lt-muted);
+}
+
+.lt-table tbody tr:hover { background: var(--lt-bg); }
+.lt-row-overdue { background: var(--lt-danger-bg); }
+.lt-actions { display: flex; gap: 0.4rem; }
+
+/* ---------- Badges ---------- */
+.lt-badge {
+  display: inline-block;
+  padding: 0.15rem 0.6rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.lt-badge-lent { background: var(--lt-warning-bg); color: var(--lt-warning); }
+.lt-badge-returned { background: var(--lt-success-bg); color: var(--lt-success); }
+.lt-badge-overdue { background: var(--lt-danger-bg); color: var(--lt-danger); }
+
+/* ---------- Misc ---------- */
+.lt-empty { text-align: center; color: var(--lt-muted); margin: 1rem 0 0; }
+.lt-hidden { display: none; }
