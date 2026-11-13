@@ -13,6 +13,13 @@
       <p class="lt-subtitle">Keep track of who has your books and when they are due back.</p>
     </div>
   </header>
+  <nav class="lt-nav">
+    <div class="lt-container lt-nav-inner">
+      <a class="lt-nav-link lt-nav-active" href="index.html">Home</a>
+      <a class="lt-nav-link" href="add.html">Add loan</a>
+      <a class="lt-nav-link" href="loans.html">All loans</a>
+    </div>
+  </nav>
 
   <main class="lt-container">
     <section class="lt-grid lt-grid-2" aria-label="Summary">
@@ -26,62 +33,21 @@
       </div>
     </section>
 
-    <section class="lt-card">
-      <h2 class="lt-card-title">Lend a book</h2>
-      <form id="loanForm" class="lt-form" novalidate>
-        <div class="lt-grid lt-grid-3">
-          <div class="lt-field">
-            <label class="lt-label" for="title">Title</label>
-            <input class="lt-input" type="text" id="title" name="title" required>
-            <span class="lt-error" id="titleError"></span>
-          </div>
-          <div class="lt-field">
-            <label class="lt-label" for="author">Author</label>
-            <input class="lt-input" type="text" id="author" name="author" required>
-            <span class="lt-error" id="authorError"></span>
-          </div>
-          <div class="lt-field">
-            <label class="lt-label" for="borrower">Borrower</label>
-            <input class="lt-input" type="text" id="borrower" name="borrower" required>
-            <span class="lt-error" id="borrowerError"></span>
-          </div>
-          <div class="lt-field">
-            <label class="lt-label" for="dueDate">Due date</label>
-            <input class="lt-input" type="date" id="dueDate" name="dueDate" required>
-            <span class="lt-error" id="dueDateError"></span>
-          </div>
-          <div class="lt-field">
-            <label class="lt-label" for="genre">Genre</label>
-            <input class="lt-input" type="text" id="genre" name="genre" required>
-            <span class="lt-error" id="genreError"></span>
-          </div>
-        </div>
-        <button class="lt-btn lt-btn-primary" type="submit">Add loan</button>
-      </form>
-    </section>
-
-    <section class="lt-card">
-      <h2 class="lt-card-title">Loans</h2>
-      <div class="lt-table-wrap">
-        <table class="lt-table">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Author</th>
-              <th>Borrower</th>
-              <th>Due date</th>
-              <th>Genre</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-          <tbody id="loanTableBody"></tbody>
-        </table>
+    <section class="lt-grid lt-grid-2">
+      <div class="lt-card">
+        <h2 class="lt-card-title">Lend a book</h2>
+        <p class="lt-card-text">Record a new loan with the borrower, due date and genre.</p>
+        <a class="lt-btn lt-btn-primary" href="add.html">Add loan</a>
       </div>
-      <p class="lt-empty" id="emptyMessage">No loans yet. Add your first one above.</p>
+      <div class="lt-card">
+        <h2 class="lt-card-title">See all loans</h2>
+        <p class="lt-card-text">View every loan, mark books as returned or remove them.</p>
+        <a class="lt-btn lt-btn-primary" href="loans.html">View loans</a>
+      </div>
     </section>
   </main>
 
+  <script src="lib/lendlib.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
