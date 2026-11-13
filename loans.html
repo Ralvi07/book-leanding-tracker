@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>All loans - Book Lending Tracker</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="lt-body">
+  <header class="lt-header">
+    <div class="lt-container">
+      <h1 class="lt-title">Book Lending Tracker</h1>
+      <p class="lt-subtitle">Keep track of who has your books and when they are due back.</p>
+    </div>
+  </header>
+  <nav class="lt-nav">
+    <div class="lt-container lt-nav-inner">
+      <a class="lt-nav-link" href="index.html">Home</a>
+      <a class="lt-nav-link" href="add.html">Add loan</a>
+      <a class="lt-nav-link lt-nav-active" href="loans.html">All loans</a>
+    </div>
+  </nav>
+
+  <main class="lt-container">
+    <section class="lt-card">
+      <h2 class="lt-card-title">Loans</h2>
+      <div class="lt-table-wrap">
+        <table class="lt-table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Author</th>
+              <th>Borrower</th>
+              <th>Due date</th>
+              <th>Genre</th>
+              <th>Status</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="loanTableBody"></tbody>
+        </table>
+      </div>
+      <p class="lt-empty" id="emptyMessage">No loans yet. Add your first one on the Add loan page.</p>
+    </section>
+  </main>
+
+  <script src="lib/lendlib.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
